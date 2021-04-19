@@ -8,6 +8,7 @@ class MainPageLocators:
 class BasePageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    BASKET_BTN = (By.CSS_SELECTOR, ".basket-mini a.btn-default")
 
 
 class LoginPageLocators:
@@ -28,3 +29,8 @@ class ProductPageLocators:
     # Alert notifications locators
     SUCCESS_ALERT = (By.XPATH, "//*[@id='messages']/div[1]/div/strong")
     BASKET_TOTAL_ALERT = (By.XPATH, "//*[@id='messages']/div[3]/div/p[1]/strong")
+
+
+class BasketPageLocators:
+    EMPTY_BASKET_MSG = (By.CSS_SELECTOR, "#content_inner")
+    PRODUCT_ITEM = (By.CSS_SELECTOR, ".basket-items")

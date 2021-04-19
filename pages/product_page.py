@@ -17,10 +17,10 @@ class ProductPage(BasePage):
         basket_total = self.browser.find_element(*ProductPageLocators.BASKET_TOTAL_ALERT).text
         assert product_price == basket_total, "Basket total in alert doesn't equal to added product's price"
 
-    def should_not_be_success_message(self):
-        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_ALERT), \
-            "Success message is presented, but should not be"
-
     def should_disappear_success_message(self):
         assert self.is_disappeared(*ProductPageLocators.SUCCESS_ALERT), \
             "Success message should disappear after 4 seconds by default"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_ALERT), \
+            "Success message is presented, but should not be"
