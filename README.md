@@ -28,4 +28,4 @@ To run test, You need to:
    > $ pip install -r requirements.txt
    
 5. Run test
-   > $ pytest -v --tb=line --language=en test_main_page.py
+   > $ pytest -v --tb=line --language=en -m need_review
