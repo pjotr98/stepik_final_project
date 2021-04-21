@@ -22,7 +22,7 @@ To run test, You need to:
    
    Or, for Windows
    
-   > $ selenium_env\Scripts\activate.bat
+   > $ venv\Scripts\activate.bat
    
 4. Install requirement from `requirements.txt` in env
    > $ pip install -r requirements.txt
