@@ -1,6 +1,8 @@
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.firefox import GeckoDriverManager
 
 
 def pytest_addoption(parser):
@@ -23,13 +25,13 @@ def browser(request):
         # options.add_argument("window-size=1400,2100")
         # options.add_argument('--disable-gpu')
         print("\nstart Chrome browser for test..")
-        browser = webdriver.Chrome(options=options)
+        browser = webdriver.Chrome(ChromeDriverManager().install(), options=options)
     elif browser_name == "firefox":
         # Firefox option
         fp = webdriver.FirefoxProfile()
         fp.set_preference("intl.accept_languages", browser_language)
         print("\nstart Firefox browser for test..")
-        browser = webdriver.Firefox(firefox_profile=fp)
+        browser = webdriver.Firefox(executable_path=GeckoDriverManager().install(), firefox_profile=fp)
     else:
         raise pytest.UsageError("--browser_name should be chrome or firefox")
     yield browser
