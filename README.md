@@ -1,11 +1,32 @@
 # stepik_final_project
 
-### Task: Run automated test for different languages
+👋 Hi! It is an automation demo project.
 
-👋 Hi!
+### Install JDK, python 3 and Allure reports first 👇
 
-To run test, You need to:
+#### For Windows:
 
+0. Install JDK and Python3 if not installed yet:
+
+   > https://www.python.org/downloads/
+   > 
+   > https://www.oracle.com/java/technologies/javase-jdk16-downloads.html
+
+1. Install scoop using PowerShell:
+
+	> $ Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+
+	> $ iwr -useb get.scoop.sh | iex
+
+2. Install Allure from scoop:
+
+	> $ scoop install allure
+
+3. Check Allure version to confirm installation:
+
+	> $ allure --version
+   
+### Launch demo project
 1. Clone 🐑 this repo 
 
    > $ cd ~/path/to/your/projects/folder/
@@ -28,4 +49,7 @@ To run test, You need to:
    > $ pip install -r requirements.txt
    
 5. Run test
-   > $ pytest -v --tb=line --language=en -m need_review
+   > $ pytest test.py -s -v --tb=line --alluredir=allure-results
+
+6. Open Allure report
+   > $ allure serve allure-results
