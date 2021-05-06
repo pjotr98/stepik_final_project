@@ -10,7 +10,7 @@ def pytest_addoption(parser):
                      help="Choose lang: en, es, fr, uk")
 
 
-@pytest.fixture(scope="function")
+@pytest.fixture(scope="session")
 def browser(request):
     browser_name = request.config.getoption("browser_name")
     browser_language = request.config.getoption("language")
@@ -18,6 +18,10 @@ def browser(request):
         # Chrome option
         options = Options()
         options.add_experimental_option('prefs', {'intl.accept_languages': browser_language})
+        # options.add_argument("--headless")
+        # options.add_argument("--no-sandbox")
+        # options.add_argument("window-size=1400,2100")
+        # options.add_argument('--disable-gpu')
         print("\nstart Chrome browser for test..")
         browser = webdriver.Chrome(options=options)
     elif browser_name == "firefox":

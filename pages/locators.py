@@ -38,5 +38,5 @@ class ProductPageLocators:
 
 
 class BasketPageLocators:
-    EMPTY_BASKET_MSG = (By.CSS_SELECTOR, "#content_inner")
+    EMPTY_BASKET_MSG = (By.CSS_SELECTOR, "#content_inner > p")
     PRODUCT_ITEM = (By.CSS_SELECTOR, ".basket-items")
