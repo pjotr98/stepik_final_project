@@ -49,7 +49,7 @@
    > $ pip install -r requirements.txt
    
 5. Run test
-   > $ pytest test.py -s -v --tb=line --alluredir=allure-results
+   > $ pytest tests.py -s -v --tb=line --alluredir=allure-results
 
 6. Open Allure report
    > $ allure serve allure-results
